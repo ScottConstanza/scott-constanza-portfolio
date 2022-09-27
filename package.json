@@ -1,0 +1,33 @@
+{
+  "name": "scott-constanza-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "minify-html": "html-minifier-terser src/index.html --collapse-whitespace --output=dist/index.html",
+    "optimize-css":"postcss src/style.css --use autoprefixer cssnano postcss-pxtorem --output dist/style.css --no-map",
+    "transpile-js": "babel src/script.js -o dist/script.js --presets=@babel/preset-env",
+    "minify-js": "uglifyjs dist/script.js --compress -o dist/script.js",
+    "build": "npm run minify-html && npm run optimize-css && npm run transpile-js && npm run minify-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScottConstanza/scott-constanza-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ScottConstanza/scott-constanza-portfolio/issues"
+  },
+  "homepage": "https://github.com/ScottConstanza/scott-constanza-portfolio#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "autoprefixer": "^10.4.12",
+    "cssnano": "^5.1.13",
+    "html-minifier-terser": "^7.0.0",
+    "postcss-cli": "^10.0.0",
+    "postcss-pxtorem": "^6.0.0",
+    "uglify-js": "^3.17.2"
+  }
+}
